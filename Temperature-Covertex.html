@@ -1,0 +1,55 @@
+<html>
+<head>
+	<title>Temperature JavaScript</title>
+</head>
+	<script type="text/javascript">
+	function convert_Temp()
+    {
+		var opt=frm.myoption.value;
+		if(opt=="Fahrenheit")
+		{
+			var val = frm.txt.value;
+			if (isNaN(val))
+			{
+				alert("Not a Number");
+			}
+		else {
+			var tf=parseInt(val);
+			var tc= (tf-32)*(5/9);
+			var res1=Math.round(tf * 100)/100;
+			frm.txt1.value=res1+"C";
+		}
+	}
+	else
+	{
+		var val=frm.txt.value;
+		if(isNaN(val))
+		{
+			alert("Not a Number");
+		}
+		else{
+			var tc=parseInt(val);
+			var tf= (tc*(9/5))+32;
+			var res1=Math.round(tf * 100)/100;
+			frm.txt1.value=res1+"F";
+		}
+	}
+}	
+</script>
+	<form name="frm">
+	<TABLE cellpadding=2 width="70%" border=1 color="BLUE";
+	<tr>
+		<td>Enter the Degrees</td>
+		<td><input type=text name="txt" size="12"></td>
+		<td><select name="myoption">
+			<option name="Faren" value="Fahrenheit">fahrenheit</option>
+			<option name="Cels" value="Celsius">celsius</option>
+			</select></td>
+		<td><input type="button" value="calculate" onclick="convert_Temp()">
+			</td></tr>
+		<tr><td>Equal Value</td>
+		<td><input type text=text name="txt1" size="12" READONLY>
+			</td><td></td>
+		</table>
+	</form>
+</html>		
